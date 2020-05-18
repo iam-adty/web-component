@@ -1,0 +1,13 @@
+{
+    "name": "iam-adty/web-component",
+    "description": "Web component",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Bagus A Priambada",
+            "email": "iam.adty@gmail.com"
+        }
+    ],
+    "require": {}
+}
