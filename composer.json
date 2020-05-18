@@ -9,5 +9,10 @@
             "email": "iam.adty@gmail.com"
         }
     ],
-    "require": {}
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "WebComponent\\": "src/"
+        }
+    }
 }
