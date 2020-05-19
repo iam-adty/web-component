@@ -1,36 +1,29 @@
-<?php namespace WebComponent;
+<?php namespace IamAdty;
 
-abstract class Component
+class Component
 {
-    /**
-     * @var Component
-     */
-    protected $parent;
+    protected $children = [];
 
-    public function setParent(Component $parent = null)
+    public function __construct(...$params)
     {
-        $this->parent = $parent;
+        $this->children = $params;
     }
 
-    public function getParent() : Component
+    public function compile()
     {
-        return $this->parent;
+        $result = "";
+        foreach ($this->children as $children) {
+            if (is_subclass_of($children, Component::class)) {
+                $result .= $children->compile();
+            } else {
+                $result .= $children;
+            }
+        }
+        return $result;
     }
 
-    public function add(Component $component): void
+    public function render()
     {
-
+        echo $this->compile();
     }
-
-    public function remove(Component $component): void
-    {
-
-    }
-
-    public function isComposite(): bool
-    {
-        return false;
-    }
-
-    abstract public function render(): string;
 }
