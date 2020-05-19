@@ -1,6 +1,6 @@
 {
-    "name": "iam-adty/web-component",
-    "description": "Web component",
+    "name": "iam-adty/php-web-component",
+    "description": "PHP Web Component",
     "type": "library",
     "license": "MIT",
     "authors": [
@@ -9,5 +9,17 @@
             "email": "iam.adty@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "iam-adty/php-variable": "dev-develop"
+    },
+    "autoload": {
+        "psr-4": {
+            "IamAdty\\": "src/"
+        }
+    },
+    "require-dev": {
+        "kint-php/kint": "^3.3"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
